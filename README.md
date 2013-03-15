@@ -1,6 +1,6 @@
 # Jackie
 
-TODO: Write a gem description
+ A Ruby interface to the Kickfolio API.
 
 ## Installation
 
@@ -27,3 +27,10 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
+
+License
+-------
+
+Nuvado is Copyright © 2013 Lacides Charris and Firebase. It is free software,
+and may be redistributed under the terms specified in the MIT-LICENSE file.
+

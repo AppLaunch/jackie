@@ -1,4 +1,4 @@
-Copyright (c) 2013 Guillermo Iguaran
+Copyright (c) 2013 Lacides Charris, Firebase.co
 
 MIT License
 

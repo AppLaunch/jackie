@@ -67,6 +67,5 @@ version.destroy
 License
 -------
 
-Nuvado is Copyright © 2013 Firebase. It is free software,
+Jackie is Copyright © 2013 Firebase. It is free software,
 and may be redistributed under the terms specified in the MIT-LICENSE file.
-

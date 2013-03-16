@@ -18,8 +18,28 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
-
+### Configuring Jackie
+```ruby
+  # Set your Api Key
+  Jackie.api_key =  "MyKickfolioApiKey"  
+```
+### Basic Objects Operations
+```ruby
+# Create New app
+app = Jackie::App.new(app_attributes)
+app.save
+  
+# Find the client with app_id 1.
+app = Jackie::App.find(1)
+app.name = "new name"
+app.save
+  
+# GET the App versions
+app.versions
+  
+# GET the Apps
+Jackie::App.all
+```
 ## Contributing
 
 1. Fork it
@@ -31,6 +51,6 @@ TODO: Write usage instructions here
 License
 -------
 
-Nuvado is Copyright © 2013 Lacides Charris and Firebase. It is free software,
+Nuvado is Copyright © 2013 Firebase. It is free software,
 and may be redistributed under the terms specified in the MIT-LICENSE file.
 

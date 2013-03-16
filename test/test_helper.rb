@@ -9,7 +9,7 @@ require "jackie"
 require "minitest/unit"
 require "minitest/autorun"
 
-Jackie.api_key =  "643f2286232d1a225415"
+Jackie.api_key =  "MyKickfolioApiKey"
 
 class MiniTest::Unit::TestCase
   def self.mock_requests!
@@ -40,7 +40,7 @@ class MiniTest::Unit::TestCase
                 "updated_at"=>"2013-02-21T20:16:28Z",
                 "comment_ids"=>[]}
 
-    @headers = {"Accept"=>"application/vnd.kickfolio.v1", "Authorization"=>"Basic NjQzZjIyODYyMzJkMWEyMjU0MTU="}
+    @headers = {"Accept"=>"application/vnd.kickfolio.v1", "Authorization"=>"Basic TXlLaWNrZm9saW9BcGlLZXk="}
     ActiveResource::HttpMock.respond_to do |mock|
       mock.get "/api/apps/1.json", @headers, @app
       mock.get "/api/versions.json?app_id=1", @headers, [@version].to_json

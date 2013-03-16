@@ -21,24 +21,40 @@ Or install it yourself as:
 ### Configuring Jackie
 ```ruby
   # Set your Api Key
-  Jackie.api_key =  "MyKickfolioApiKey"  
+  Jackie.api_key =  "MyKickfolioApiKey"
 ```
 ### Basic Objects Operations
 ```ruby
 # Create New app
 app = Jackie::App.new(app_attributes)
 app.save
-  
-# Find the client with app_id 1.
+
+# Find the app with app_id 1.
 app = Jackie::App.find(1)
 app.name = "new name"
 app.save
-  
+
 # GET the App versions
 app.versions
-  
+
+# Delete a App
+app.destroy
+
 # GET the Apps
 Jackie::App.all
+
+# Create New App Version
+version = Jackie::Version.new(:app_id => app.id, :bundle_url => "https://bundle_url.com/myiosapp")
+version.save
+
+# Find the version with version id 1.
+version = Jackie::Version.find(1)
+
+# GET All Versions
+Jackie::Version.all
+
+# Delete a Version
+version.destroy
 ```
 ## Contributing
 

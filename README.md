@@ -26,7 +26,7 @@ Or install it yourself as:
 ### Basic Objects Operations
 ```ruby
 # Create New app
-app = Jackie::App.new(app_attributes)
+app = Jackie::App.new(:name => "Hello")
 app.save
 
 # Find the app with app_id 1.
@@ -44,7 +44,7 @@ app.destroy
 Jackie::App.all
 
 # Create New App Version
-version = Jackie::Version.new(:app_id => app.id, :bundle_url => "https://bundle_url.com/myiosapp")
+version = Jackie::Version.new(:app_id => app.id, :bundle_url => "https://site.org/hello.app.zip")
 version.save
 
 # Find the version with version id 1.
@@ -56,6 +56,9 @@ Jackie::Version.all
 # Delete a Version
 version.destroy
 ```
+
+For additional information read the [Kickfolio API docs](https://github.com/Kickfolio/ApiDocs)
+
 ## Contributing
 
 1. Fork it
@@ -68,4 +71,4 @@ License
 -------
 
 Jackie is Copyright © 2013 Firebase. It is free software,
-and may be redistributed under the terms specified in the MIT-LICENSE file.
+and may be redistributed under the terms specified in the LICENSE.txt file.

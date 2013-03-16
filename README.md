@@ -25,33 +25,33 @@ Or install it yourself as:
 ```
 ### Basic Objects Operations
 ```ruby
-# Create New app
+# Create a new app
 app = Jackie::App.new(:name => "Hello")
 app.save
 
-# Find the app with app_id 1.
+# Find the app with id 1.
 app = Jackie::App.find(1)
 app.name = "new name"
 app.save
 
-# GET the App versions
-app.versions
-
-# Delete a App
+# Delete an App
 app.destroy
 
-# GET the Apps
+# Get all the existing Apps
 Jackie::App.all
 
-# Create New App Version
+# Create a new Version of an App
 version = Jackie::Version.new(:app_id => app.id, :bundle_url => "https://site.org/hello.app.zip")
 version.save
 
-# Find the version with version id 1.
+# Find the version with id 1.
 version = Jackie::Version.find(1)
 
-# GET All Versions
+# Get all the Versions
 Jackie::Version.all
+
+# GET all the Versions of an App
+app.versions
 
 # Delete a Version
 version.destroy

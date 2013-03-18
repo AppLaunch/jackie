@@ -12,14 +12,18 @@ class VersionTest < MiniTest::Unit::TestCase
   end
 
   def test_save_new_with_file
-    version = Jackie::Version.new(app_id: 1, file: File.basename(__FILE__))
-    version.save
-    assert_match /http:\/\/localhost:10453\/nuvado-test\/version_test\.rb/, version.bundle_url
+    with_fake_s3 do
+      version = Jackie::Version.new(app_id: 1, file: File.basename(__FILE__))
+      version.save
+      assert_match /http:\/\/localhost:10453\/nuvado-test\/version_test\.rb/, version.bundle_url
+    end
   end
 
   def test_create_with_file
-    version = Jackie::Version.create(app_id: 1, file: File.basename(__FILE__))
-    assert_match /http:\/\/localhost:10453\/nuvado-test\/version_test\.rb/, version.bundle_url
+    with_fake_s3 do
+      version = Jackie::Version.create(app_id: 1, file: File.basename(__FILE__))
+      assert_match /http:\/\/localhost:10453\/nuvado-test\/version_test\.rb/, version.bundle_url
+    end
   end
 
   def test_save_new_with_bundle_url

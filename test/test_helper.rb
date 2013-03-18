@@ -10,14 +10,22 @@ require "minitest/unit"
 require "minitest/autorun"
 
 Jackie.api_key =  "MyKickfolioApiKey"
-Jackie.configure_s3({
-  :access_key_id => "123",
-  :secret_access_key => "abc",
-  :server => "localhost",
-  :port => "10453"
-}, {:bucket => "nuvado-test"})
 
 class MiniTest::Unit::TestCase
+  def with_fake_s3
+    Jackie.configure_s3({
+      :access_key_id => "123",
+      :secret_access_key => "abc",
+      :server => "localhost",
+      :port => "10453"
+    }, {:bucket => "nuvado-test"})
+
+    yield
+  ensure
+    AWS::S3::Base.disconnect!
+    Jackie::Version.s3_config = nil
+  end
+
   def self.mock_requests!
     # FIXME move to fixture module
     @app = { "id" => "1",

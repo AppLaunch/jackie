@@ -1,7 +1,7 @@
 module Jackie
   class Version < Base
     cattr_accessor :s3_config, :instance_writer => false
-    before_create :upload_to_s3, :if => Proc.new{ attributes["file"] &&  s3_config }
+    before_create :upload_to_s3, :if => Proc.new{ attributes["file"] && s3_config }
 
     class << self
 

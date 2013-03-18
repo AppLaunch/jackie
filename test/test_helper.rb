@@ -10,6 +10,12 @@ require "minitest/unit"
 require "minitest/autorun"
 
 Jackie.api_key =  "MyKickfolioApiKey"
+Jackie.configure_s3({
+  :access_key_id => "123",
+  :secret_access_key => "abc",
+  :server => "localhost",
+  :port => "10453"
+}, {:bucket => "nuvado-test"})
 
 class MiniTest::Unit::TestCase
   def self.mock_requests!
@@ -45,6 +51,7 @@ class MiniTest::Unit::TestCase
       mock.get "/api/apps/1.json", @headers, @app
       mock.get "/api/versions.json?app_id=1", @headers, [@version].to_json
       mock.get "/api/versions/1.json", @headers, @version.to_json
+      mock.post "/api/versions.json", @headers
     end
   end
 end

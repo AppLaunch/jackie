@@ -31,7 +31,7 @@ app.save
 
 # Find the app with id 1.
 app = Jackie::App.find(1)
-app.name = "new name"
+app.name = "HelloWorld"
 app.save
 
 # Delete an App

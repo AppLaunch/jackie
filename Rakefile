@@ -13,10 +13,8 @@ task :help do
   puts "rake test - Run tests"
 end
 
-# Need this to run tests
-# TODO: figure out how to detach it so we don't need two terminals
 task :fake_s3 do
-  `fakes3 --port 10453 --root test_root`
+  system "fakes3 --port 10453 --root test_root &"
 end
 
 task :test do

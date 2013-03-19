@@ -1,3 +1,4 @@
+require "active_resource"
 module Jackie
   class Base < ActiveResource::Base
     self.site = "http://kickfolio.com/api/"

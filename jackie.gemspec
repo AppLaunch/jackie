@@ -5,7 +5,7 @@ require 'jackie'
 
 Gem::Specification.new do |spec|
   spec.name          = "jackie"
-  spec.version       = Jackie::VERSION
+  spec.version       = "0.0.2"
   spec.authors       = ["Lacides Charris", "Guillermo Iguaran", "Roberto Miranda", "Firebase.co"]
   spec.email         = ["lacides@firebase.co", "guille@firebase.co", "roberto@firebase.co", "hello@firebase.co"]
   spec.description   = %q{A Ruby interface to the Kickfolio API.}

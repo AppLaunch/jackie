@@ -11,6 +11,6 @@ class AppTest < MiniTest::Unit::TestCase
   end
 
   def test_versions
-    assert_kind_of ActiveResource::Collection, @app.versions
+    assert_kind_of Jackie::Version, @app.versions.first
   end
 end

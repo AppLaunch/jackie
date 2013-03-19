@@ -1,4 +1,5 @@
 require "base64"
+require "active_resource"
 require "jackie/base"
 require "jackie/app"
 require "jackie/version"

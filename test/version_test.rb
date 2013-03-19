@@ -13,7 +13,7 @@ class VersionTest < MiniTest::Unit::TestCase
 
   def test_save_new_with_file
     with_fake_s3 do
-      version = Jackie::Version.new(app_id: 1, file: File.basename(__FILE__))
+      version = Jackie::Version.new(:app_id => 1, :file => File.basename(__FILE__))
       version.save
       assert_match /http:\/\/localhost:10453\/nuvado-test\/version_test\.rb/, version.bundle_url
     end
@@ -21,19 +21,19 @@ class VersionTest < MiniTest::Unit::TestCase
 
   def test_create_with_file
     with_fake_s3 do
-      version = Jackie::Version.create(app_id: 1, file: File.basename(__FILE__))
+      version = Jackie::Version.create(:app_id => 1, :file => File.basename(__FILE__))
       assert_match /http:\/\/localhost:10453\/nuvado-test\/version_test\.rb/, version.bundle_url
     end
   end
 
   def test_save_new_with_bundle_url
-    version = Jackie::Version.new(app_id: 1, bundle_url: "http://somewhere.in/the/cloud")
+    version = Jackie::Version.new(:app_id => 1, :bundle_url => "http://somewhere.in/the/cloud")
     version.save
     assert_equal "http://somewhere.in/the/cloud", version.bundle_url
   end
 
   def test_create_with_bundle_url
-    version = Jackie::Version.create(app_id: 1, bundle_url: "http://somewhere.in/the/cloud")
+    version = Jackie::Version.create(:app_id => 1, :bundle_url => "http://somewhere.in/the/cloud")
     assert_equal "http://somewhere.in/the/cloud", version.bundle_url
   end
 end

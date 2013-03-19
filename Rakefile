@@ -13,6 +13,10 @@ task :help do
   puts "rake test - Run tests"
 end
 
+task :fake_s3 do
+  system "fakes3 --port 10453 --root test_root &"
+end
+
 task :test do
   Dir.chdir('test')
 end

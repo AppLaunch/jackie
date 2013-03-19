@@ -58,7 +58,19 @@ app.versions
 # Delete a Version
 version.destroy
 ```
+### Jackie and AWS-S3
+The following is optional. You can use Jackie without S3 as seem above.
+```ruby
+# Set your AWS api keys
+Jackie.configure_s3({
+  :access_key_id => "YOUR ACCESS KEY ID",
+  :secret_access_key => "YOUR SECRET ACCESS KEY"
+}, {:bucket => "YOUR BUCKET"})
 
+# Usage
+version = Jackie::Version.new(:app_id => app.id, :file => "path/to/local/file.zip")
+version.save
+```
 For additional information read the [Kickfolio API docs](https://github.com/Kickfolio/ApiDocs)
 
 ## Contributing

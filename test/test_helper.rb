@@ -23,7 +23,7 @@ class MiniTest::Unit::TestCase
     yield
   ensure
     AWS::S3::Base.disconnect!
-    Jackie::Version.s3_config = nil
+    Jackie::Version.uploader = nil
   end
 
   def self.mock_requests!

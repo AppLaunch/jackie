@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/firebaseco/jackie.png?branch=master)](https://travis-ci.org/firebaseco/jackie)
+
 # Jackie
 
  A Ruby interface to the Kickfolio API.

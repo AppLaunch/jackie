@@ -19,5 +19,5 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "minitest"
   spec.add_development_dependency "fakes3"
 
-  spec.add_dependency "activeresource", "~> 3.2.13"
+  spec.add_dependency "activeresource"
 end

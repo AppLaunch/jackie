@@ -1,6 +1,6 @@
 module Jackie
   class Base < ActiveResource::Base
-    self.site = "http://kickfolio.com/api/"
+    self.site = "https://kickfolio.com/api/"
     headers['Accept'] = 'application/vnd.kickfolio.v1'
 
     class << self
